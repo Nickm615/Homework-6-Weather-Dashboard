@@ -19,7 +19,7 @@ function getCity(cityName) {
             renderTemp(data.main.temp)
             renderWind(data.wind.speed)
             renderHumidity(data.main.humidity)
-            
+            get5DayForecast(data.coord.lat, data.coord.lon)
         })
 
     }
@@ -43,18 +43,19 @@ function renderWind(wind){
     weatherToday.appendChild(pEl2);
 }
 function renderHumidity(humidity){
-var pEl3 = document.createElement(pEl3);
-pEl3.textContent = 'Humidity: ' + humidity;
-weatherToday.appendChild(pEl3);
+    var pEl3 = document.createElement(pEl3);
+    pEl3.textContent = 'Humidity: ' + humidity;
+    weatherToday.appendChild(pEl3);
 
 }
-
+function get5DayForecast(lat, lon){
+    var queryUrl2 = 'https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lon+'&exclude={part}&units=imperial&appid=22a142603e1f1adab5d950df358023bb'
+    fetch(queryUrl2)
+        .then(function (response) {
+            return (response.json())
+        })   
+        .then(function (data) {
+        console.log(data)
         
-//             // var cityName = data.name;
-//             
-//             
-//             var wind = data.wind.speed;
-//             
-//             var humidity = data.main.humidity;
-//          })
-// }
+        })
+}
