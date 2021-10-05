@@ -16,6 +16,9 @@ function getCity() {
         .then(function (data) {
             // console.log(cityEntry.value);
             // console.log(data);
+            searchHistoryButton = document.createElement('button')
+            searchHistoryButton.textContent = cityEntry.value;
+            mainEl.appendChild(searchHistoryButton);
             renderCityName(cityEntry.value)
             localStorage.setItem('city', cityEntry.value)
             renderIcon(data.weather[0].icon)

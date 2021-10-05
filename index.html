@@ -12,19 +12,21 @@
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-    <main class='d-flex'>
-        <div class='float-left m-2 p-2' id='searchArea'>
-            <input id='cityEntry' class = 'rounded col-1' type="text" value="Tampa">
-            <button id = 'cityEntryBtn' class =  'd-block bg-primary text-white col-1 rounded'>Search</button>
-            <div id='recentSearch'></div>
-        </div>
-
-        <div>
-            <div id='weatherToday' class='float-right m-2 p-2 border col-6'>
-
+    <main class=>
+        <div class='d-flex row flex-row'>
+            <div class='col-4 float-left m-2 p-2' id='searchArea'>
+                <input id='cityEntry' class = 'rounded' type="text" value="Tampa">
+                <button id = 'cityEntryBtn' class =  'd-block bg-primary text-white rounded'>Search</button>
+                <div id='recentSearch'></div>
             </div>
-            <div id='5day'>
-                
+
+            <div class='col-8'>
+                <div id='weatherToday' class='float-right m-2 p-2 border col-6'>
+
+                </div>
+                <div class='row'id='5day'>
+                    
+                </div>
             </div>
         </div>
     </main>
