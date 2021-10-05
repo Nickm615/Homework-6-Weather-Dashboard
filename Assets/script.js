@@ -1,12 +1,13 @@
 var mainEl = document.querySelector('main')
 var weatherToday = document.getElementById('weatherToday')
-var cityName = document.getElementById('cityEntry').value;
-var queryUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=imperial&appid=22a142603e1f1adab5d950df358023bb'
+// var cityName = document.getElementById('cityEntry').value;
+
 var cityEntryBtn = document.getElementById('cityEntryBtn')
 
 cityEntryBtn.addEventListener('click', getCity);
 
 function getCity() {
+    var queryUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityEntry.value + '&units=imperial&appid=22a142603e1f1adab5d950df358023bb'
     fetch(queryUrl)
         .then(function (response) {
             // console.log(response.json)
@@ -16,6 +17,7 @@ function getCity() {
             // console.log(cityEntry.value);
             console.log(data);
             renderCityName(cityEntry.value)
+            localStorage.setItem('city', cityEntry.value)
             renderIcon(data.weather[0].icon)
             renderTemp(data.main.temp)
             renderWind(data.wind.speed)
@@ -28,7 +30,8 @@ function getCity() {
 
 function renderIcon(icon){
     var imgEl = document.createElement('img')
-    imgEl.setAttribute('href', 'http://openweathermap.org/img/wn/' +icon+ '.png');
+    console.log(icon)
+    imgEl.setAttribute('href', 'http://openweathermap.org/img/wn/'+icon+'.png');
     imgEl.style.width='100px'
     imgEl.style.height='100px'
     weatherToday.appendChild(imgEl);
@@ -37,7 +40,7 @@ function renderIcon(icon){
 
 function renderCityName(cityName){
     var h1El = document.createElement('h1');
-    h1El.textContent = cityName + ' ' + moment().format('MM-DD-YYYY');
+    h1El.textContent = cityEntry.value + ' ' + moment().format('MM-DD-YYYY');
     weatherToday.appendChild(h1El);
 }
 
