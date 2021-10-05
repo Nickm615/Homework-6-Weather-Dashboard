@@ -12,17 +12,20 @@
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-    <main>
+    <main class='d-flex'>
         <div class='float-left m-2 p-2' id='searchArea'>
             <input id='cityEntry' class = 'rounded col-1' type="text" value="Tampa">
             <button id = 'cityEntryBtn' class =  'd-block bg-primary text-white col-1 rounded'>Search</button>
             <div id='recentSearch'></div>
         </div>
-        <div id='weatherToday' class='float-right m-2 p-2 border col-6'>
 
-        </div>
-        <div id='5day'>
-            
+        <div>
+            <div id='weatherToday' class='float-right m-2 p-2 border col-6'>
+
+            </div>
+            <div id='5day'>
+                
+            </div>
         </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

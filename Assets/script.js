@@ -66,25 +66,30 @@ function renderUV(UV) {
     weatherToday.appendChild(pEl4)
 }
 function render5Day(data){
+ 
+    var futureForecast = document.getElementById('5day');
     console.log(data)
-    for (i=1; i<5; i++){
-        console.log(i)
-    let card = document.createElement('div')
+    for (i=1; i<6; i++){
+        console.log(data.daily[i].weather[0].icon)
+    var card = document.createElement('div')
     card.innerHTML = '<div>' +
         '<h3>' +
-        moment().add(i, 'days').format('L'); +
-            '</h3>' +
-            '<ul>' +
-            '<img  src=http://openweathermap.org/img/wn/' +
+        moment().add(i, 'days').format('L') +
+            '</h3><ul>' +
+            '<img  src="http://openweathermap.org/img/wn/' +
             data.daily[i].weather[0].icon +
-            '@2x.png>' +
-            '<li>Temp:' +
+            '@2x.png">' +
+            '<li> Temp: ' +
+            data.daily[i].temp.day +
+            ' F </li>'+
+            '<li>Wind:'+
             data.daily[i].wind_speed +
             "MPH</li>" +
-            "<li>Humidity: " +
+            "<li> Humidity: " +
             data.daily[i].humidity +
             "%</li>" +
-            '</ul></div>'
+            '</ul></div>';
+    futureForecast.appendChild(card)
 }
 }
 
