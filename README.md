@@ -1,3 +1,1 @@
-I collaborated with my study group (John Coakley, Jason Xie, and Jessica Guico) on this project.
-
-I had a lot of trouble with this project and spent many many hours working on it. I am happy that the core functionality is working and mostly organized. The formatting is incomplete and I have not finished the functionality to save recent searches as buttons. I will continue updating this project, but unfortunately I ran out of time before deadline.
+This is an application that displays up to date weather information based on a user-entered city. It uses two third-party weather APi to first find coordinates based on the entered city name and then querying another API using those coordinates to return and display weather data. This data is displayed on cards as a daily forecast as well as a week-long forecast.
